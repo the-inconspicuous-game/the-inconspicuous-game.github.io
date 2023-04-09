@@ -22,6 +22,7 @@ The game also uses music and a couple of sound effects.
 		canvas	
 		{
 		    margin: auto;
+		    margin-top: 20px;
 		    padding: 0;
 		    display: block;
 		    position: absolute;
@@ -32,15 +33,26 @@ The game also uses music and a couple of sound effects.
 		    right: 0;
 		}
 		h1 {
-		text-align: center;
-		font-family: Helvetica, sans-serif;
-		font-size: 20px;
-		padding-top: calc(100vh - 30px);
-		margin:0;
-		font-style: italic;
-		  font-weight: normal;
+	  		text-align: center;
+			font-family: Helvetica, sans-serif;
+			font-size: 20px;
+			margin-top: 800px;
+			margin:0;
+			font-style: italic;
+			font-weight: normal;
 		}
-		
+
+		#controls img {
+		    display: inline-block;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+		#controls {
+		    padding-top: 700px;
+		    text-align:center;
+		}
+		    
+				
 
 	</style>
     
@@ -313,7 +325,26 @@ The game also uses music and a couple of sound effects.
                     window.clearTimeout(timer);
                 }
              });
-            
+             var left_arrow = document.getElementById("go_left");
+             left_arrow.addEventListener("mousedown", function() {
+    // Do stuff when the mouse is held down on `element`
+                    player.moveLeft();
+
+		});
+		  var right_arrow = document.getElementById("go_right");
+             right_arrow.addEventListener("mousedown", function() {
+    // Do stuff when the mouse is held down on `element`
+                    player.moveRight();
+
+		});
+		 var restart = document.getElementById("restart");
+             restart.addEventListener("mousedown", function() {
+    // Do stuff when the mouse is held down on `element`
+                    main();
+                    window.clearTimeout(timer);
+
+		});
+   
             main();
 
             //Fills an array of fruits, creates a player and starts the game
@@ -407,7 +438,12 @@ The game also uses music and a couple of sound effects.
     <div>
         <canvas id="backgroundCanvas" width="1024" height="650"></canvas>
         <canvas id="canvas" width="1024" height="650"></canvas>
+        <div id="controls">
+        <img id="go_left" src="images/arrow-l.png" width="70">
+        <img id="restart" src="images/restart.png" width="70">
+        <img id="go_right" src="images/arrow-r.png" width="70">
         </div>
-        <h1>use left and right arrows and suffer <3</h1>
+        </div>
+        <h1 id="tuto">use left and right arrows (keyboard or icons) and suffer <3</h1>
     </body>
 </html>

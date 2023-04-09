@@ -31,6 +31,16 @@ The game also uses music and a couple of sound effects.
 		    left: 0;
 		    right: 0;
 		}
+		h1 {
+		text-align: center;
+		font-family: Helvetica, sans-serif;
+		font-size: 20px;
+		padding-top: calc(100vh - 30px);
+		margin:0;
+		font-style: italic;
+		  font-weight: normal;
+		}
+		
 
 	</style>
     
@@ -393,8 +403,11 @@ The game also uses music and a couple of sound effects.
     </script>
     
     </head>
-    <body style="margin: auto; margin-top:3%;">
+    <body>
+    <div>
         <canvas id="backgroundCanvas" width="1024" height="650"></canvas>
         <canvas id="canvas" width="1024" height="650"></canvas>
+        </div>
+        <h1>use left and right arrows and suffer <3</h1>
     </body>
 </html>

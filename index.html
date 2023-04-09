@@ -17,8 +17,10 @@ The game also uses music and a couple of sound effects.
     <head>
         <title>Trauma Catcher</title>
         <meta charset="UTF-8">
+        <meta name="viewport"  user-scalable=no"> 
     </head>
     <style type="text/css">
+    
 		canvas	
 		{
 		    margin: auto;
@@ -51,6 +53,9 @@ The game also uses music and a couple of sound effects.
 		    padding-top: 700px;
 		    text-align:center;
 		}
+		* {
+      touch-action: manipulation;
+  }
 		    
 				
 
@@ -325,6 +330,7 @@ The game also uses music and a couple of sound effects.
                     window.clearTimeout(timer);
                 }
              });
+             
              var left_arrow = document.getElementById("go_left");
              left_arrow.addEventListener("mousedown", function() {
     // Do stuff when the mouse is held down on `element`

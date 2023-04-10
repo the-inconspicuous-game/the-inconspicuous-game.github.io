@@ -133,20 +133,20 @@ The game also uses music and a couple of sound effects.
                 }
                 
                 //Moves the player left
-                this.moveLeft = function()
+                this.moveLeft = function(speed = this.playerSpeed)
                 {
                     if(this.x > 0)
                     {
-                        this.x -= this.playerSpeed;
+                        this.x -= speed;
                     }
                 }
                 
                 //Moves the player right
-                this.moveRight = function()
+                this.moveRight = function(speed = this.playerSpeed)
                 {
                     if(this.x < canvas.width - this.playerWidth)
                     {
-                        this.x += this.playerSpeed;
+                        this.x += speed;
                     }
                 }
             }
@@ -334,13 +334,13 @@ The game also uses music and a couple of sound effects.
              var left_arrow = document.getElementById("go_left");
              left_arrow.addEventListener("mousedown", function() {
     // Do stuff when the mouse is held down on `element`
-                    player.moveLeft();
+                    player.moveLeft(50);
 
 		});
 		  var right_arrow = document.getElementById("go_right");
              right_arrow.addEventListener("mousedown", function() {
     // Do stuff when the mouse is held down on `element`
-                    player.moveRight();
+                    player.moveRight(50);
 
 		});
 		 var restart = document.getElementById("restart");
